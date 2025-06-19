@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a Jiu Jitsu Platform</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .logo { color: #2c3e50; font-size: 24px; font-weight: bold; }
+        .content { line-height: 1.6; color: #333; }
+        .button { display: inline-block; padding: 12px 24px; background: #3498db; color: white; text-decoration: none; border-radius: 5px; margin: 20px 0; }
+        .footer { margin-top: 30px; text-align: center; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🥋 Jiu Jitsu Platform</div>
+        </div>
+        
+        <div class="content">
+            <h1>¡Bienvenido {{name}}!</h1>
+            
+            <p>Te damos la bienvenida a nuestra plataforma de Jiu Jitsu, el lugar donde la comunidad se conecta.</p>
+            
+            <p>Con tu cuenta ya puedes:</p>
+            <ul>
+                <li>Explorar eventos y competencias</li>
+                <li>Registrarte en seminarios y cursos</li>
+                <li>Comprar en nuestro marketplace</li>
+                <li>Conectar con otros atletas</li>
+            </ul>
+            
+            <div style="text-align: center;">
+                <a href="{{platformUrl}}" class="button">Explorar Plataforma</a>
+            </div>
+            
+            <p>Si tienes preguntas, no dudes en contactarnos respondiendo a este email.</p>
+            
+            <p><strong>¡Oss!</strong><br>
+            El equipo de Jiu Jitsu Platform</p>
+        </div>
+        
+        <div class="footer">
+            <p>© 2025 Jiu Jitsu Platform. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
