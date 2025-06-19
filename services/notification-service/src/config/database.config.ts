@@ -17,7 +17,6 @@ export const getDatabaseConfig = (
     maxIdleTimeMS: 30000,
     serverSelectionTimeoutMS: 5000,
     socketTimeoutMS: 45000,
-    bufferMaxEntries: 0,
     bufferCommands: false,
   };
 
@@ -26,4 +25,18 @@ export const getDatabaseConfig = (
   }
 
   return options;
+};
+
+export const databaseConfig = {
+  uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/notifications_db',
+  options: {
+    retryWrites: true,
+    retryReads: true,
+    maxPoolSize: 10,
+    minPoolSize: 2,
+    maxIdleTimeMS: 30000,
+    serverSelectionTimeoutMS: 5000,
+    socketTimeoutMS: 45000,
+    bufferCommands: false,
+  }
 };
