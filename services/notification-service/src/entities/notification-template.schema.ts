@@ -64,7 +64,7 @@ export class NotificationTemplate {
   @Prop({ default: true })
   isActive: boolean;
 
-  @Prop()
+  @Prop({ type: Object })
   metadata?: Record<string, any>; // Metadatos adicionales
 
   @Prop()

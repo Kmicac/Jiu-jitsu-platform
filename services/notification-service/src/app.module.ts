@@ -18,6 +18,7 @@ import { SmsNotification, SmsNotificationSchema } from './entities/sms-notificat
 import { NotificationTemplate, NotificationTemplateSchema } from './entities/notification-template.schema';
 
 import { databaseConfig } from './config/database.config';
+import { SharedModule } from './shared.module';
 
 @Module({
   imports: [
@@ -30,11 +31,7 @@ import { databaseConfig } from './config/database.config';
       limit: 100, // 100 requests per minute
     }]),
     MongooseModule.forRoot(databaseConfig.uri, databaseConfig.options),
-    MongooseModule.forFeature([
-      { name: EmailNotification.name, schema: EmailNotificationSchema },
-      { name: SmsNotification.name, schema: SmsNotificationSchema },
-      { name: NotificationTemplate.name, schema: NotificationTemplateSchema },
-    ]),
+    SharedModule,
     KafkaModule,
   ],
   controllers: [
@@ -43,9 +40,6 @@ import { databaseConfig } from './config/database.config';
   ],
   providers: [
     NotificationService,
-    EmailService,
-    SmsService,
-    TemplateService,
   ],
 })
 export class AppModule {}
