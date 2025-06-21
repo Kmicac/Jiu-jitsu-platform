@@ -7,18 +7,12 @@ import { NotificationController } from './controllers/notification.controller';
 import { HealthController } from './controllers/health.controller';
 
 import { NotificationService } from './services/notification.service';
-import { EmailService } from './services/email.service';
-import { SmsService } from './services/sms.service';
-import { TemplateService } from './services/template.service';
 
 import { KafkaModule } from './events/kafka/kafka.module';
 
-import { EmailNotification, EmailNotificationSchema } from './entities/email-notification.schema';
-import { SmsNotification, SmsNotificationSchema } from './entities/sms-notification.schema';
-import { NotificationTemplate, NotificationTemplateSchema } from './entities/notification-template.schema';
-
 import { databaseConfig } from './config/database.config';
 import { SharedModule } from './shared.module';
+import { KafkaAdminService } from './events/kafka/kafka.admin.service';
 
 @Module({
   imports: [
@@ -40,6 +34,7 @@ import { SharedModule } from './shared.module';
   ],
   providers: [
     NotificationService,
+    KafkaAdminService,
   ],
 })
 export class AppModule {}
